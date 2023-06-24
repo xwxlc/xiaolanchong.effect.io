@@ -1,0 +1,16 @@
+html,
+body,
+#app {
+    display: block;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: $BG_COLOR;
+}
+
+* {
+    box-sizing: border-box;
+}

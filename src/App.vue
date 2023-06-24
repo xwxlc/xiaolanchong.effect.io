@@ -2,8 +2,9 @@
 </script>
 
 <template>
-  <h1>hell world</h1>
+  <router-view></router-view>
 </template>
 
-<style scoped lang="sass">
+<style scoped lang="scss">
+
 </style>
