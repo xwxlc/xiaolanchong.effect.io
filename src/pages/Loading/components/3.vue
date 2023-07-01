@@ -1,6 +1,11 @@
 <script setup lang="ts" name="demo3">
 import { ref } from 'vue'
-
+const props = defineProps({
+    isPage: {
+        type: Boolean,
+        default: false
+    }
+});
 const list = ref<number[]>([-0.8,-0.4,0])
 
 </script>
@@ -9,11 +14,13 @@ const list = ref<number[]>([-0.8,-0.4,0])
     <div class="load">
         <div class="load-item" v-for="(item, index) in list" :key="index" :style="{ '--d': item }"></div>
     </div>
+    <div v-if="props.isPage" class="page-view"></div>
 </template>
 
 <style scoped lang="scss">
 .load {
     --color: rgba(255, 165, 0, 1);
+    margin: auto;
     position: relative;
     width: 8em;
     height: 8em;

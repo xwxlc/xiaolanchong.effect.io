@@ -1,5 +1,11 @@
 <script setup lang="ts" name="demo2">
 import { ref } from 'vue'
+const props = defineProps({
+    isPage: {
+        type: Boolean,
+        default: false
+    }
+});
 const list = ref<number[]>([7,6,5,4,3,2,1,0,1,2,3,4,5,6,7])
 </script>
 
@@ -7,11 +13,13 @@ const list = ref<number[]>([7,6,5,4,3,2,1,0,1,2,3,4,5,6,7])
     <div class="load">
         <div class="load-item" v-for="(item, index) in list" :key="index" :style="{ '--d': item }"></div>
     </div>
+    <div v-if="props.isPage" class="page-view"></div>
 </template>
 
 <style scoped lang="scss">
 .load {
     --h: 80px;
+    margin: auto;
     display: flex;
     align-items: center;
     position: relative;

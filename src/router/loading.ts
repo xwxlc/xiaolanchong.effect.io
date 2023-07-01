@@ -6,7 +6,10 @@ Object.keys(Components).forEach((key: string) => {
   if (Components[key].name) {
     ComponentsPages.push({
       path: `/loading/${Components[key].name}`,
-      component: Components[key]
+      component: Components[key],
+      props: {
+        isPage: true
+      }
     });
   }
 });
@@ -16,6 +19,9 @@ let routes: Array<RouteRecordRaw> = [
   {
     path: '/loading',
     component: () => import('@/pages/Loading/index.vue'),
+    props: {
+      isPage: true
+    }
   },
   ...ComponentsPages
 ];

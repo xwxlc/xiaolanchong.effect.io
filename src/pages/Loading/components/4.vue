@@ -1,14 +1,21 @@
 <script setup lang="ts" name="demo4">
-// import { ref } from 'vue'
+const props = defineProps({
+    isPage: {
+        type: Boolean,
+        default: false
+    }
+});
 </script>
 
 <template>
     <div class="load"></div>
+    <div v-if="props.isPage" class="page-view"></div>
 </template>
 
 <style scoped lang="scss">
 .load {
   --w: 200px;
+  margin: auto;
   width: var(--w);
   height: var(--w);
   border-radius: 50%;

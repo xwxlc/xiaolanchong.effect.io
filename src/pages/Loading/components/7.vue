@@ -1,5 +1,11 @@
 <script setup lang="ts" name="demo7">
 import { ref } from 'vue'
+const props = defineProps({
+    isPage: {
+        type: Boolean,
+        default: false
+    }
+});
 interface listItem {
     color: string,
     rotate: string
@@ -19,10 +25,12 @@ const list = ref<listItem[]>([
                 :style="{ '--color': item.color, '--rotate': item.rotate }"></div>
         </div>
     </div>
+    <div v-if="props.isPage" class="page-view"></div>
 </template>
 
 <style scoped lang="scss">
 .load {
+    margin: auto;
     position: relative;
     width: 90px;
     height: 180px;

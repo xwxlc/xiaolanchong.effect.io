@@ -1,5 +1,11 @@
 <script setup lang="ts" name="demo1">
 import { ref } from 'vue'
+const props = defineProps({
+    isPage: {
+        type: Boolean,
+        default: false
+    }
+});
 const Colors = ref<string[]>(['#e94545', '#eb8f34', '#eecf69', '#215221', '#87bb80', '#87ceeb', '#c393eb'])
 </script>
 
@@ -8,6 +14,7 @@ const Colors = ref<string[]>(['#e94545', '#eb8f34', '#eecf69', '#215221', '#87bb
         <div class="load-item" v-for="(item, index) in  Colors " :key="index"
             :style="{ '--color': item, '--index': index }"></div>
     </div>
+    <div v-if="props.isPage" class="page-view"></div>
 </template>
 
 <style scoped lang="scss">
@@ -15,6 +22,7 @@ const Colors = ref<string[]>(['#e94545', '#eb8f34', '#eecf69', '#215221', '#87bb
     --border: 5px;
     --gap: 15px;
     --w: 200px;
+    margin: auto;
     width: var(--w);
     height: var(--w);
     position: relative;

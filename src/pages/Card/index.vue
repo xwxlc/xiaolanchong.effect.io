@@ -11,7 +11,6 @@ const onLink = ({ name }: { name: string }) => {
 </script>
 
 <template>
-    empty
     <div class="list">
         <div class="list-item" v-for="(item, index ) in components" :key="index" @click="onLink(item)">
             <component :is="item"></component>

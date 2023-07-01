@@ -2,9 +2,13 @@
 </script>
 
 <template>
-  <router-view></router-view>
+	<div class="page-container">
+		<router-view></router-view>
+	</div>
 </template>
 
 <style scoped lang="scss">
-
+.page-container {
+	padding: 10px;
+}
 </style>

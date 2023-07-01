@@ -1,11 +1,17 @@
 <script setup lang="ts" name="demo5">
-// import { ref } from 'vue'
+const props = defineProps({
+    isPage: {
+        type: Boolean,
+        default: false
+    }
+});
 </script>
 
 <template>
     <div class="load">
       <div class="load-item"></div>
     </div>
+    <div v-if="props.isPage" class="page-view"></div>
 </template>
 
 <style scoped lang="scss">
@@ -13,6 +19,7 @@
   --bx-in: #454344;
   --wave: skyblue;
   --wave-line: #fff;
+  margin: auto;
   width: 200px;
   height: 200px;
   border-radius: 50%;

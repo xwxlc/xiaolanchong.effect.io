@@ -1,19 +1,36 @@
 <script setup lang="ts" name="demo6">
-// import { ref } from 'vue'
+const props = defineProps({
+    isPage: {
+        type: Boolean,
+        default: false
+    }
+});
 </script>
 
 <template>
-  <div class="load">
-    <div class="load-item"></div>
+  <div class="load-box">
+    <div class="load">
+      <div class="load-item"></div>
+    </div>
   </div>
+  <div v-if="props.isPage" class="page-view"></div>
 </template>
 
 <style scoped lang="scss">
+.load-box{
+  margin: auto;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
 .load {
   --color: orange;
   --bg: #f3e8e8;
-
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -5px;
   width: 200px;
   height: 10px;
   border-radius: 30px;
