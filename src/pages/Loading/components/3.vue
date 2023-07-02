@@ -22,8 +22,8 @@ const list = ref<number[]>([-0.8,-0.4,0])
     --color: rgba(255, 165, 0, 1);
     margin: auto;
     position: relative;
-    width: 8em;
-    height: 8em;
+    width: 200px;
+    height: 200px;
     transform-style: preserve-3d;
     perspective: 40em;
 

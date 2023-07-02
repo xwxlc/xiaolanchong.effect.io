@@ -6,7 +6,7 @@ const modules = import.meta.glob('./components/*.vue', { import: 'default', eage
 const components: any = ref(modules);
 
 const onLink = ({ name }: { name: string }) => {
-    router.push(`/loading/${name}`)
+    router.push(`/card/${name}`)
 }
 </script>
 
@@ -21,5 +21,8 @@ const onLink = ({ name }: { name: string }) => {
 <style scoped lang="scss">
 .list {
     width: 100%;
+    &-item{
+        cursor: pointer;
+    }
 }
 </style>

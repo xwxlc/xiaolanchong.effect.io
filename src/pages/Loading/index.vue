@@ -26,9 +26,7 @@ const onLink = ({ name }: { name: string }) => {
     &-item {
         width: 220px;
         height: 220px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        cursor: pointer;
     }
 }
 </style>
