@@ -1,30 +1,13 @@
 <script setup lang="ts" name="demo3">
-import Prism from "prismjs";
-import { onMounted } from "vue";
+import vuePrism from '@/components/vue-prism.vue'
 const props = defineProps({
     isPage: {
         type: Boolean,
         default: false
     }
 });
-onMounted(() => {
-    Prism.highlightAll();
-})
-</script>
-
-<template>
-    <h1>3、边框</h1>
-    <div class="card card-1">
-        mask遮罩+伪元素+border<br/>
-        缺点：filter不友好
-    </div>
-    <div class="card card-2">
-        mask遮罩+多重drop-shadow实现边框<br/>
-        缺点：需要设置有背景色
-    </div>
-    <div v-if="props.isPage" class="page-view">
-        <pre><code class="language-sass line-numbers">
-.card {
+const cssCode =
+`.card {
     width: 350px;
     height: 125px;
 
@@ -81,7 +64,23 @@ onMounted(() => {
             
         }
     }
-}
+}`
+</script>
+
+<template>
+    <h1>3、边框</h1>
+    <div class="card card-1">
+        mask遮罩+伪元素+border<br />
+        缺点：filter不友好
+    </div>
+    <div class="card card-2">
+        mask遮罩+多重drop-shadow实现边框<br />
+        缺点：需要设置有背景色
+    </div>
+    <div v-if="props.isPage" class="page-view">
+        <vue-prism>{{ cssCode }}</vue-prism>
+        <pre><code class="language-sass line-numbers">
+
         </code></pre>
     </div>
 </template>
@@ -151,7 +150,7 @@ h1 {
             background: #000;
             -webkit-mask: radial-gradient(circle at 10px center, transparent 10px, #000 0) -10px;
             pointer-events: none;
-            
+
         }
     }
 }

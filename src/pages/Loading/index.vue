@@ -1,9 +1,9 @@
 <script setup lang="ts" name="loading">
-import { ref } from 'vue'
+import { shallowRef } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const modules = import.meta.glob('./components/*.vue', { import: 'default', eager: true });
-const components: any = ref(modules);
+const components: any = shallowRef(modules);
 
 const onLink = ({ name }: { name: string }) => {
     router.push(`/loading/${name}`)

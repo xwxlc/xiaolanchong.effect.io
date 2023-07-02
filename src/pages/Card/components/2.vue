@@ -1,24 +1,13 @@
 <script setup lang="ts" name="demo2">
-import Prism from "prismjs";
-import { onMounted } from "vue";
+import vuePrism from '@/components/vue-prism.vue'
 const props = defineProps({
     isPage: {
         type: Boolean,
         default: false
     }
 });
-onMounted(() => {
-    Prism.highlightAll();
-})
-</script>
-
-<template>
-    <h1>2、渐变背景+mask遮罩</h1>
-    <div class="card card-1">渐变色</div>
-    <div class="card card-2">渐变色</div>
-    <div v-if="props.isPage" class="page-view">
-        <pre><code class="language-sass line-numbers">
-.card {
+const cssCode =
+`.card {
     width: 350px;
     height: 125px;
 
@@ -63,8 +52,15 @@ onMounted(() => {
             pointer-events: none;
         }
     }
-}
-        </code></pre>
+}`
+</script>
+
+<template>
+    <h1>2、渐变背景+mask遮罩</h1>
+    <div class="card card-1">渐变色</div>
+    <div class="card card-2">渐变色</div>
+    <div v-if="props.isPage" class="page-view">
+        <vue-prism>{{ cssCode }}</vue-prism>
     </div>
 </template>
 

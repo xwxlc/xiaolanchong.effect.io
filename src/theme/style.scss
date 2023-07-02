@@ -8,7 +8,18 @@ body,
 }
 
 body {
-    background-color: $BG_COLOR;
+    background-color: #333333;
+    // 下一步完成SCSS主题配置
+
+    // &[theme='dark'] {
+    //     background-color: $dark_BG;
+    //     --font-color: rgba($dark_FONT);
+    // }
+
+    // &[theme='light'] {
+    //     background-color: $light_BG;
+    //     --font-color: rgba($light_FONT);
+    // }
 }
 
 * {
