@@ -5,6 +5,9 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import loading from './loading';
 import card from './card';
+import thing from './thing';
+import cleverstyle from './cleverstyle';
+
 // 设置路由规则
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,9 +16,11 @@ const routes: Array<RouteRecordRaw> = [
   },
   ...loading,
   ...card,
+  ...thing,
+  ...cleverstyle,
   {
     path: '/:pathMatch(.*)',
-    component: () => import('@/layout/404.vue'),
+    component: () => import('@/layout/404.vue')
   }
 ];
 console.log(routes);

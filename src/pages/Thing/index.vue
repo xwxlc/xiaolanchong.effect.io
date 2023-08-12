@@ -1,4 +1,4 @@
-<script setup lang="ts" name="card">
+<script setup lang="ts" name="thing">
 import { shallowRef } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
@@ -6,7 +6,7 @@ const modules = import.meta.glob('./components/*.vue', { import: 'default', eage
 const components: any = shallowRef(modules);
 
 const onLink = ({ name }: { name: string }) => {
-    router.push(`/card/${name}`)
+    router.push(`/thing/${name}`)
 }
 </script>
 
@@ -20,8 +20,12 @@ const onLink = ({ name }: { name: string }) => {
 
 <style scoped lang="scss">
 .list {
-    width: 100%;
-    &-item{
+    display: flex;
+    flex-wrap: wrap;
+
+    &-item {
+        width: 220px;
+        height: 220px;
         cursor: pointer;
     }
 }
