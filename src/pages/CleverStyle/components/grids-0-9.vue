@@ -64,7 +64,7 @@ const cssCode =
     <div v-if="!props.isPage" class="title">盆友圈自适应9宫格</div>
     <div v-if="props.isPage" class="page-list">
         <div class="list" v-for="(list, listIndex) in listGroup" :key="listIndex">
-            <div class="list-item" v-for="(item, index) in list" :key="index"><img src="@/assets/vue.svg" /></div>
+            <div class="list-item" v-for="item in list" :key="item"><img src="@/assets/vue.svg" /></div>
         </div>
     </div>
     <div v-if="props.isPage" class="page-view">

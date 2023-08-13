@@ -1,5 +1,4 @@
 <script setup lang="ts" name="cup">
-import { ref } from 'vue'
 const props = defineProps({
     isPage: {
         type: Boolean,
