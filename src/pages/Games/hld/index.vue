@@ -110,7 +110,7 @@ const locationToIndex = (x: number, y: number): number => {
     return y * level.value + x
 }
 // 添加键盘
-const onKeydown = (event) => {
+const onKeydown = (event: any) => {
     const spaceIndex = getSpaceIndex();
     let index = spaceIndex;
     const code = event.keyCode;
