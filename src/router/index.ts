@@ -19,6 +19,10 @@ const routes: Array<RouteRecordRaw> = [
   ...thing,
   ...cleverstyle,
   {
+    path: '/games/hld',
+    component: () => import('@/pages/Games/hld/index.vue')
+  },
+  {
     path: '/:pathMatch(.*)',
     component: () => import('@/layout/404.vue')
   }

@@ -11,7 +11,7 @@ const list = ref<list[]>([
     { code: 'CARD', name: '优惠券、卡片', path: '/card' },
     { code: 'Thing', name: '物品', path: '/thing' },
     { code: 'CleverStyle', name: '巧妙的样式', path: '/cleverstyle' },
-
+    { code: 'GamesHld', name: '数组华容道Demo', path: '/games/hld' },
 ])
 </script>
 
